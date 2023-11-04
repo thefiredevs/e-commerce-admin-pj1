@@ -109,23 +109,30 @@ function Products() {
     
   return (
     <Container>
-        <Title>Products</Title>
+        <Title>Produtos</Title>
         <Wrapper>
             
             <FilterSection>
-                <SearchProduct placeholder='Search by product name' onChange={(e) => handleS(e, {type: "search"})}></SearchProduct>
+                <SearchProduct placeholder='Procure produto pelo nome' onChange={(e) => handleS(e, {type: "search"})}></SearchProduct>
                 <Sections onChange={(e) => handleS(e, {type: "cat"})}>
-                    <Options value="" default>category</Options>
-                    <Options>jewelery</Options>
-                    <Options>clotiong</Options>
-                    <Options>bottom</Options>
+                    <Options value="" default>Categoria</Options>
+                    <Options value="joias">Joias</Options>
+                    <Options value="calcados">Calçados</Options>
+                    <Options value="chapeus">Chapéus</Options>
+                    <Options value="roupas-intimas">Roupas Íntimas</Options>
+                    <Options value="lencos">Lenços</Options>
+                    <Options value="saias">Saias</Options>
+                    <Options value="trajes-de-banho">Trajes de Banho</Options>
+                    <Options value="uniformes">Uniformes</Options>
+                    <Options value="vestidos">Vestidos</Options>
+                    <Options value="casacos">Casacos</Options>
                 </Sections>
                 <Sections onChange={(e) => handleS(e, {type: "sort"})}>
-                    <Options value="" default>Price sort</Options>
-                    <Options value="price-asc">Low to high</Options>
-                    <Options value="price-desc">High to low</Options>
+                    <Options value="" default>Sortear</Options>
+                    <Options value="price-asc">Menor para Maior</Options>
+                    <Options value="price-desc">Maior para Menor</Options>
                 </Sections>
-                <AddProduct onClick={() => setEditIsOpen(true)}><AddIcon/>  Add Product</AddProduct>
+                <AddProduct onClick={() => setEditIsOpen(true)}><AddIcon/>  Adicionar Produto</AddProduct>
             </FilterSection>
             <ProductsComp />
         </Wrapper>

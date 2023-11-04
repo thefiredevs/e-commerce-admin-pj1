@@ -108,7 +108,10 @@ function Orders() {
             const {data} = await req.get(`/api/orders/?page=${page}&${new URLSearchParams(queries)}`, {cancelToken: axiosCancelToken.token})
             setOrders(p => [...p, ...data])
         } catch (error) {
-            if(error.response.status === 404) return  dispatch(setError(error.response.data.message))
+            if (error.response && error.response.status === 404) {
+                return dispatch(setError(error.response.data.message));
+              }
+              
             if(axios.isCancel(error)) return setOrders([]) //req canceled by user
             dispatch(setError("failed to fetch orders"))
         }
@@ -129,7 +132,7 @@ function Orders() {
 
   return (
 <Container>
-        <Title>Products</Title>
+        <Title>Produtos</Title>
         <Wrapper>
             
             <FilterSection onSubmit={search}>

@@ -84,7 +84,7 @@ function EditAnnouncments({isOpen, setIsOpen, EditAnnouncmentsInfo, title, desc}
       dispatch(setError(data?.message))
       dispatch(editAnnoucment(annoucment))
     } catch (error) {
-      dispatch(setError(error.responce.data.message))
+      dispatch(setError(error.response.data.message))
     }
     
   }
@@ -94,7 +94,7 @@ function EditAnnouncments({isOpen, setIsOpen, EditAnnouncmentsInfo, title, desc}
       dispatch(setError(data?.message))
       dispatch(addannouncements(annoucment))
     } catch (error) {
-      dispatch(setError(error.responce.data.message))
+      dispatch(setError(error.response.data.message))
     }
     
   }
